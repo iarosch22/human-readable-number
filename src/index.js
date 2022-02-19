@@ -18,5 +18,28 @@ module.exports = function toReadable (number) {
             result = tw_val[twCount];
         }
     }
+    if(number >= 100 && number < 1000) {
+        let hundredCount = Math.floor(number / 100);
+        let newNum = number % 100;
+        if(newNum < 10) {
+            if(newNum != 0) {
+                result = `${dg_val[hundredCount]} hundred ${dg_val[newNum]}`;
+            } else {
+                result = `${dg_val[hundredCount]} hundred`;
+            }
+        }
+        if(newNum >= 10 && newNum < 20) {
+            result = `${dg_val[hundredCount]} hundred ${tn_val[newNum-10]}`;
+        }
+        if(newNum >= 20 && newNum < 100) {
+            let twCount = Math.floor(newNum / 10 - 2);
+            let dgCount = newNum % 10;
+            if(dgCount != 0) {
+                result = `${dg_val[hundredCount]} hundred ${tw_val[twCount]} ${dg_val[dgCount]}`;
+            } else {
+                result = `${dg_val[hundredCount]} hundred ${tw_val[twCount]}`;
+            }
+        }
+    }
     return result;
 }

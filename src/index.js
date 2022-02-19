@@ -10,7 +10,7 @@ module.exports = function toReadable (number) {
         result = tn_val[number-10];
     }
     if(number >= 20 && number < 100) {
-        let twCount = number / 10 - 2;
+        let twCount = Math.floor(number / 10 - 2);
         let dgCount = number % 10;
         if(dgCount != 0) {
             result = tw_val[twCount] + ' ' + dg_val[dgCount];

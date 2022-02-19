@@ -11,9 +11,9 @@ module.exports = function toReadable (number) {
     }
     if(number >= 20 && number < 100) {
         let twCount = number / 10 - 2;
-        let tnCount = number % 10;
-        if(tnCount !== 0) {
-            result = tw_val[twCount] + ' ' + tn_val[tnCount];
+        let dgCount = number % 10;
+        if(dgCount !== 0) {
+            result = tw_val[twCount] + ' ' + dg_val[tnCount];
         } else {
             result = tw_val[twCount];
         }

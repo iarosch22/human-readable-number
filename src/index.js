@@ -13,7 +13,7 @@ module.exports = function toReadable (number) {
         let twCount = number / 10 - 2;
         let tnCount = number % 10;
         if(tnCount !== 0) {
-            result = tw_val[twCount] + ' ' + tw_val[tnCount];
+            result = tw_val[twCount] + ' ' + tn_val[tnCount];
         } else {
             result = tw_val[twCount];
         }
